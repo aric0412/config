@@ -1,0 +1,46 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9000/eureka/
+server:
+  port: 9700
+spring:
+  application:
+    name: service-zuul
+zuul:
+
+  routes:
+    asserts:
+      path: /asserts/**
+      strip-prefix: false
+      serviceId: asserts
+    market:
+      path: /m/**
+      strip-prefix: false
+      serviceId: market
+    member:
+      path: /member/**
+      strip-prefix: false
+      serviceId: member
+    news:
+      path: /news/**
+      strip-prefix: false
+      serviceId: news
+    order:
+      path: /order/**
+      strip-prefix: false
+      serviceId: order
+    readservice:
+      path: /readservice/**
+      strip-prefix: false
+      serviceId: readservice
+    trade:
+      path: /trade/**
+      strip-prefix: false
+      serviceId: trade
+    workorder:
+      path: /workorder/**
+      strip-prefix: false
+      serviceId: workorder
+
+
